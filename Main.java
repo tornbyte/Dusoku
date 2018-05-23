@@ -16,10 +16,10 @@ public class Main {
 				grid[row][col] = new Cell();
 			}
 		}
-		//int[][] puzzle = new int[9][9];
 				int runs = 0;
 				long time = 0;
 				
+				//Set the puzzle you want to solve here. I use 0's as it seems more readable.
 				int[][] puzzle = { {9,6,0,0,0,0,8,0,0},
 						   		   {0,0,0,0,3,0,6,0,5},
 						   		   {0,0,0,0,0,6,0,0,9},
@@ -30,12 +30,17 @@ public class Main {
 						   		   {4,0,5,0,1,0,0,0,0},
 						   		   {0,0,9,0,0,0,0,7,4}};
 				
+				//Sets the grid of cells to the indicated puzzles value.
 				for(int row=0; row<9; row++) {
 					for(int col=0; col<9; col++) {
 						grid[row][col].setValue(puzzle[row][col]);
 					}
 				}
 				
+				//Main logic loop for the program. 
+				//Console output of timings and statistics.
+				//You can get better performance by running solTricky several times and checking for changes
+				//However, it's generally quick on easy/medium puzzles, so it's not setup like that currently.
 				System.out.println("Before: ");
 				prtPuzzle( grid );
 				long startTime = System.currentTimeMillis();
